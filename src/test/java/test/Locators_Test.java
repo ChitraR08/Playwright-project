@@ -122,17 +122,15 @@ public class Locators_Test{
 
 		//Switch window example
 		
-		  pg.locator("#openwindow").click(); Thread.sleep(2000); 
-		  BrowserContext bc2 = brwsr.newContext(); 
-		  Page pg2 = bc2.newPage();
-		  Thread.sleep(1000);
-
-		  pg2.navigate("https://www.qaclickacademy.com/");
-		  Thread.sleep(1000);
-
-		  System.out.println("Title for new window : "+ pg2.title());
-		  Thread.sleep(1000);
-		 		
+		/*
+		 * pg.locator("#openwindow").click(); Thread.sleep(2000); BrowserContext bc2 =
+		 * brwsr.newContext(); Page pg2 = bc2.newPage(); Thread.sleep(1000);
+		 * 
+		 * pg2.navigate("https://www.qaclickacademy.com/"); Thread.sleep(1000);
+		 * 
+		 * System.out.println("Title for new window : "+ pg2.title());
+		 * Thread.sleep(1000);
+		 */		 		
 		//Switch Tab Example
 		/*
 		 * pg.locator("#opentab").click(); Thread.sleep(2000); BrowserContext bc3 =
