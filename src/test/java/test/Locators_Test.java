@@ -143,8 +143,6 @@ public class Locators_Test{
 		
 		//Alert Example
 		Locator lc = pg.locator("[name='enter-name']");
-		ElementUtils.highlightElement(pg, lc);
-		
 		lc.fill("Chitra");
 		Thread.sleep(2000);
 		String str = lc.inputValue();
@@ -166,7 +164,7 @@ public class Locators_Test{
 		//Confirm Alert Example
 		
 		  Locator lc2 = pg.locator("[name='enter-name']"); lc2.fill("rami");
-		  ElementUtils.highlightElement(pg, lc2);
+		  
 		  pg.onceDialog(Dialog -> { String s2 = Dialog.message();
 		  System.out.println("Message : "+Dialog.message()); //
 		 // Dialog.accept();
@@ -180,7 +178,6 @@ public class Locators_Test{
 		//WebTable
 		// --------- Count number of rows ------------------
 		Locator table = pg.locator("table.table-display");
-		ElementUtils.highlightElement(pg, table);
 		Locator row = table.locator("tr");
 		int rowcount = row.count();
 		System.out.println(rowcount);
@@ -197,7 +194,7 @@ public class Locators_Test{
 		
 				//------------- Extracting TR Data from Table ------
 		 Locator rows = pg.locator("table[name='courses'] tbody tr").nth(3); // 4th row
-		 ElementUtils.highlightElement(pg, rows);
+
          String instructor = rows.locator("td").nth(0).textContent();
          String course = rows.locator("td").nth(1).textContent();
          String price = rows.locator("td").nth(2).textContent();
