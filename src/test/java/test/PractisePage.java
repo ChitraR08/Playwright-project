@@ -44,7 +44,7 @@ public class PractisePage {
 
             // handle alert
            // System.out.println("Alert Text: " + page.onDialog(dialog -> {System.out.println(dialog.message()); dialog.accept(); }));
-            Thread.sleep(1000);
+          
             browser.close();
         }
     }
