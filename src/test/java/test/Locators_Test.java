@@ -1,5 +1,6 @@
 package test;
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,13 +106,14 @@ public class Locators_Test{
 	
 		//Suggestion Class
 		pg.locator("#autocomplete").type("US");
+		
 		pg.waitForSelector("(//div[@id='ui-id-9'])");
 		pg.keyboard().press("ArrowDown");
 		pg.keyboard().press("ArrowDown");
+		util.Utility.CaptureScreenshot(pg);
 		pg.keyboard().press("ArrowDown");
 		pg.keyboard().press("ArrowDown");
 		pg.keyboard().press("Enter");
-		
 		
 		//Dropdown selection
 		pg.locator("#dropdown-class-example").selectOption("option2");
@@ -119,18 +121,23 @@ public class Locators_Test{
 		Thread.sleep(2000);
 		pg.selectOption("select", new SelectOption().setIndex(3));
 		Thread.sleep(2000);
+		
 
 		//Switch window example
 		
-		/*
-		 * pg.locator("#openwindow").click(); Thread.sleep(2000); BrowserContext bc2 =
-		 * brwsr.newContext(); Page pg2 = bc2.newPage(); Thread.sleep(1000);
-		 * 
-		 * pg2.navigate("https://www.qaclickacademy.com/"); Thread.sleep(1000);
-		 * 
-		 * System.out.println("Title for new window : "+ pg2.title());
-		 * Thread.sleep(1000);
-		 */		 		
+		pg.locator("#openwindow").click();
+		Thread.sleep(2000);
+		BrowserContext bc2 = brwsr.newContext();
+		Page pg2 = bc2.newPage();
+		Thread.sleep(1000);
+
+		pg2.navigate("https://www.qaclickacademy.com/");
+		util.Utility.CaptureScreenshot(pg);
+		
+		System.out.println("Title for new window : " + pg2.title());
+		Thread.sleep(1000);
+		pg2.close();
+		util.Utility.CaptureScreenshot(pg);
 		//Switch Tab Example
 		/*
 		 * pg.locator("#opentab").click(); Thread.sleep(2000); BrowserContext bc3 =
@@ -256,6 +263,9 @@ public class Locators_Test{
          System.out.println(test.allInnerTexts());
          
          Thread.sleep(2000);
+         
+         //Capturing visible areas screenshot
+        util.Utility.CaptureScreenshot(pg);
 	}
 	@AfterMethod
 	public void TearDown() {
