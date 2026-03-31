@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-31T06:00:37 GMT-05:00" name="Default suite" finished-at="2026-03-31T06:00:54 GMT-05:00" duration-ms="16928">
+  <suite started-at="2026-03-31T06:47:30 GMT-05:00" name="Default suite" finished-at="2026-03-31T06:47:52 GMT-05:00" duration-ms="21177">
     <groups>
     </groups>
-    <test started-at="2026-03-31T06:00:37 GMT-05:00" name="Default test" finished-at="2026-03-31T06:00:54 GMT-05:00" duration-ms="16928">
+    <test started-at="2026-03-31T06:47:30 GMT-05:00" name="Default test" finished-at="2026-03-31T06:47:52 GMT-05:00" duration-ms="21177">
       <class name="test.Parallel_Execution">
-        <test-method signature="testamazon()[pri:0, instance:test.Parallel_Execution@36c88a32]" started-at="2026-03-31T06:00:37 GMT-05:00" name="testamazon" finished-at="2026-03-31T06:00:52 GMT-05:00" duration-ms="14779" status="PASS">
+        <test-method signature="FileDownload()[pri:0, instance:test.Parallel_Execution@7ce3cb8e]" started-at="2026-03-31T06:47:30 GMT-05:00" name="FileDownload" finished-at="2026-03-31T06:47:46 GMT-05:00" duration-ms="15372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FileDownload -->
+        <test-method signature="testamazon()[pri:0, instance:test.Parallel_Execution@7ce3cb8e]" started-at="2026-03-31T06:47:46 GMT-05:00" name="testamazon" finished-at="2026-03-31T06:47:50 GMT-05:00" duration-ms="4000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testamazon -->
-        <test-method signature="testgoogle()[pri:0, instance:test.Parallel_Execution@36c88a32]" started-at="2026-03-31T06:00:52 GMT-05:00" name="testgoogle" finished-at="2026-03-31T06:00:54 GMT-05:00" duration-ms="2062" status="PASS">
+        <test-method signature="testgoogle()[pri:0, instance:test.Parallel_Execution@7ce3cb8e]" started-at="2026-03-31T06:47:50 GMT-05:00" name="testgoogle" finished-at="2026-03-31T06:47:52 GMT-05:00" duration-ms="1765" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testgoogle -->
