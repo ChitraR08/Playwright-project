@@ -13,8 +13,10 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Download;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.options.WaitForSelectorState;
 
 public class Upload_Download_Test {
 
@@ -42,6 +44,24 @@ public class Upload_Download_Test {
 				System.out.println("Download Failed!!");
 				Thread.sleep(1000);
 			}
+			
+			
+			//File Upload
+			
+			pg.setInputFiles("input[type='file']", Paths.get("C:\\Users\\Lenovo\\Downloads\\dwnld.xlsx"));
+			pg.waitForTimeout(2000);
+			Locator msg =  pg.locator(":text-is('Updated Excel Data Successfully.')");
+			msg.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(2000));
+			
+			String str = msg.textContent();
+			assert str.contains("Updated Excel Data Successfully."): "Message is mismatch";
+			System.out.println(str);
+			pg.waitForTimeout(1000);
+		
+			pg.click("//input[@id='fileinput']");
+			pg.waitForTimeout(5000);
+			
+			//Validation
 			brow.close();
 		}
 	}
