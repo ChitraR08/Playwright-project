@@ -50,6 +50,8 @@ public class Upload_Download_Test {
 			
 			pg.setInputFiles("input[type='file']", Paths.get("C:\\Users\\Lenovo\\Downloads\\dwnld.xlsx"));
 			pg.waitForTimeout(2000);
+			util.Utility.CaptureScreenshot(pg);
+
 			Locator msg =  pg.locator(":text-is('Updated Excel Data Successfully.')");
 			msg.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE).setTimeout(2000));
 			
@@ -61,7 +63,7 @@ public class Upload_Download_Test {
 			pg.click("//input[@id='fileinput']");
 			pg.waitForTimeout(5000);
 			
-			//Validation
+			//Browser Close
 			brow.close();
 		}
 	}

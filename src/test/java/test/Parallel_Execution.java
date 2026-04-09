@@ -22,6 +22,7 @@ public class Parallel_Execution {
 			Page pg = b.newPage();
 			pg.navigate("https://www.google.com/");
 			System.out.println("Google Thread : "+ Thread.currentThread().getId());
+			util.Utility.CaptureScreenshot(pg);
 			b.close();
 		}
 	}
